@@ -1,0 +1,18 @@
+spring:
+ profiles:
+  active:
+  - dev
+
+---
+spring:
+ profiles: dev
+ application:
+  name: mloineservicecloud-config-mloine-dev
+
+---
+spring:
+ profiles: test
+ application:
+  name: mloineservicecloud-config-mloine-test
+
+# utf-8 保存
