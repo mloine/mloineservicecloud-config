@@ -1,0 +1,87 @@
+spring:
+  profiles:
+    active:
+    - dev
+
+---
+spring:
+  profiles: dev
+  application:
+    name: mloineservicecloud-config-dept-client
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            
+    driver-class-name: org.gjt.mm.mysql.Driver             
+    url: jdbc:mysql://localhost:3306/CLOUD001
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 5                                           
+      initial-size: 5                                       
+      max-total: 5                                          
+      max-wait-millis: 200 
+
+server:
+  port: 8001
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        
+  type-aliases-package: com.mloine.springcloud.entities    
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                       
+
+
+eureka:
+  client: 
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: dept-8001.com 
+    prefer-ip-address: true 
+    
+info:
+  app.name: mloine-mloineservicecloud
+  github: https://github.com/mloine
+  author.name: mloine
+  author.phone: 15618975413
+  author.wx: xyk15618975413
+---
+spring:
+  profiles: test
+  application:
+    name: mloineservicecloud-config-dept-client
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            
+    driver-class-name: org.gjt.mm.mysql.Driver             
+    url: jdbc:mysql://localhost:3306/CLOUD001
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 5                                           
+      initial-size: 5                                       
+      max-total: 5                                          
+      max-wait-millis: 200 
+
+server:
+  port: 8001
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        
+  type-aliases-package: com.mloine.springcloud.entities    
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                       
+
+
+eureka:
+  client: 
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: dept-8001.com 
+    prefer-ip-address: true 
+    
+info:
+  app.name: mloine-mloineservicecloud
+  github: https://github.com/mloine
+  author.name: mloine
+  author.phone: 15618975413
+  author.wx: xyk15618975413
